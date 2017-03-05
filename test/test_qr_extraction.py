@@ -13,8 +13,9 @@ class TestQRExtraction(unittest.TestCase):
         """ Test Detection method """
 
         # Data path
-        img_path = 'resources/input_detection'
-        img_save_path = 'resources/output'
+        cur_dir = os.path.abspath(os.path.join(os.path.realpath(__file__), '..'))
+        img_path = os.path.join(cur_dir, 'resources', 'input_detection')
+        img_save_path = os.path.join(cur_dir, 'resources', 'resources/output')
         img_names = [f for f in os.listdir(img_path) if not os.path.isdir(img_path+'/'+f)]
 
         # Display intermediate results or not
@@ -55,7 +56,8 @@ class TestQRExtraction(unittest.TestCase):
         """
 
         # Data path
-        img_path = 'resources/input_decode'
+        cur_dir = os.path.abspath(os.path.join(os.path.realpath(__file__), '..'))
+        img_path = os.path.join(cur_dir, 'resources', 'input_decode')
         img_names = os.listdir(img_path)
         for img_name in img_names:
 
